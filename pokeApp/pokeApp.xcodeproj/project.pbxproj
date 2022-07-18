@@ -15,6 +15,7 @@
 		A8DC33E028855A0000E5A151 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8DC33DE28855A0000E5A151 /* LaunchScreen.storyboard */; };
 		A8DC33E828855A0D00E5A151 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DC33E728855A0D00E5A151 /* Pokemon.swift */; };
 		A8DC33EA28855A8100E5A151 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DC33E928855A8100E5A151 /* ApiService.swift */; };
+		A8DC33EC28857FAF00E5A151 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DC33EB28857FAF00E5A151 /* MyCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A8DC33E128855A0000E5A151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8DC33E728855A0D00E5A151 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		A8DC33E928855A8100E5A151 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		A8DC33EB28857FAF00E5A151 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				A8DC33E728855A0D00E5A151 /* Pokemon.swift */,
 				A8DC33D528855A0000E5A151 /* SceneDelegate.swift */,
 				A8DC33D728855A0000E5A151 /* ViewController.swift */,
+				A8DC33EB28857FAF00E5A151 /* MyCollectionViewCell.swift */,
 				A8DC33E928855A8100E5A151 /* ApiService.swift */,
 				A8DC33D928855A0000E5A151 /* Main.storyboard */,
 				A8DC33DC28855A0000E5A151 /* Assets.xcassets */,
@@ -146,6 +149,7 @@
 			files = (
 				A8DC33D828855A0000E5A151 /* ViewController.swift in Sources */,
 				A8DC33EA28855A8100E5A151 /* ApiService.swift in Sources */,
+				A8DC33EC28857FAF00E5A151 /* MyCollectionViewCell.swift in Sources */,
 				A8DC33E828855A0D00E5A151 /* Pokemon.swift in Sources */,
 				A8DC33D428855A0000E5A151 /* AppDelegate.swift in Sources */,
 				A8DC33D628855A0000E5A151 /* SceneDelegate.swift in Sources */,

@@ -17,11 +17,11 @@ enum HTTPMethod: String {
 class APIService {
     static let shared = APIService()
     
-    let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
-    var pokemon: Pokemon?
     
-    func getPokemon(with searchText: String) {
-        let requestURL = baseURL.appendingPathComponent(searchText)
+    let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
+    
+    func getPokemon() {
+        let requestURL = baseURL
         
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.get.rawValue
@@ -35,9 +35,7 @@ class APIService {
             guard let data = data else { return }
             
             do {
-                let pokemon = try JSONDecoder().decode(Pokemon.self, from: data)
-                self.pokemon = pokemon
-                print(pokemon.name)
+                let result = try JSONDecoder().decode(Welcome.self, from: data)
             } catch {
                 print("Error decoding Pokemon: \(error)")
                 return

@@ -30,8 +30,9 @@ class DetailsViewController: UIViewController {
     private func configure() {
         pokemonNameString.capitalizeFirstLetter()
         detailView.pokemonNameLabel.text = pokemonNameString
-        detailView.pokemonImage.load(url: (URL(string: "\(pokemonUrlString)") ?? URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png"))!)
         detailView.backButton.addTarget(self, action: #selector(backButtonPressed), for: .primaryActionTriggered)
+        detailView.pokemonImage.load(url: URL(string: "\(pokemonUrlString)")!)
+
     }
 
     @objc func backButtonPressed() {

@@ -70,13 +70,8 @@ class RootViewController: UIViewController {
         let detailsVC = DetailsViewController()
         detailsVC.modalPresentationStyle = .fullScreen
         detailsVC.pokemonNameString = "\(pokemon[indexPath.row].name)"
-        detailsVC.pokemonUrlString = "\(String(describing: pokemonSelected[indexPath.row].sprites.front_default))"
+        detailsVC.pokemonUrlString = "\((pokemonSelected[indexPath.row].sprites.front_default) ?? "")"
         present(detailsVC, animated: true)
-    }
-    
-    @objc func starButtonPressed() {
-        print("obama")
-        PokemonCell().starButton.backgroundColor = .red
     }
 }
 
@@ -93,9 +88,8 @@ extension RootViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         capitalizedPokemonName.capitalizeFirstLetter()
         cell.pokemonNameLabel.text = capitalizedPokemonName
         cell.pokemonImageView.load(url: URL(string: self.pokemonSelected[indexPath.row].sprites.front_default!)!)
+        cell.pokemonTypeLabel.text = "Pokemon of type \(pokemonSelected[indexPath.row].types.first?.type.name ?? "")"
         cell.layer.cornerRadius = 10
-        
-        cell.starButton.addTarget(self, action: #selector(starButtonPressed), for: .primaryActionTriggered)
         return cell
     }
     
@@ -115,17 +109,4 @@ extension RootViewController: UICollectionViewDelegate {
     }
 }
 
-extension UIImageView {
-    func load(url: URL) {
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.image = image
-                    }
-                }
-            }
-        }
-    }
-}
 

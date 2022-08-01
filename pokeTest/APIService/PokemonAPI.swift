@@ -11,7 +11,7 @@ import UIKit
 class PokeAPI {
     
     func getData(completion: @escaping (Result<[PokemonEntry], Error>) -> Void) {
-        let stringUrl = "https://pokeapi.co/api/v2/pokemon?limit=10"
+        let stringUrl = "https://pokeapi.co/api/v2/pokemon?limit=20"
         guard let url = URL(string: stringUrl) else { return }
         let task = URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
             guard let data = data, error == nil else {

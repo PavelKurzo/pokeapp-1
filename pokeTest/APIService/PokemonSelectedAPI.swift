@@ -24,7 +24,7 @@ class PokemonSelectedAPI {
             } catch {
                 completion(.failure(error))
             }
-        }
+        }   
         task.resume()
     }
 }

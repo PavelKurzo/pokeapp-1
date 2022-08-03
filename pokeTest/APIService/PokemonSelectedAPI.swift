@@ -12,7 +12,6 @@ class PokemonSelectedAPI {
     
     func getData(url: String, completion: @escaping (Result <PokemonSelected, Error>) -> Void) {
         guard let url = URL(string: url) else { return }
-
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {
                 completion(.failure(APIError.noAnyData))

@@ -25,7 +25,6 @@ class PokemonCell: UICollectionViewCell {
         let label = UILabel()
         label.textAlignment = .center
         label.numberOfLines = 0
-        label.text = "Pokemon of type"
         label.textColor = .lightGray
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -77,11 +76,9 @@ class PokemonCell: UICollectionViewCell {
             
             pokemonNameLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 15),
             pokemonNameLabel.leftAnchor.constraint(equalTo: pokemonImageView.leftAnchor, constant: 100),
-//            pokemonNameLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -40),
             
             pokemonTypeLabel.topAnchor.constraint(equalTo: pokemonNameLabel.bottomAnchor, constant: 4),
             pokemonTypeLabel.leftAnchor.constraint(equalTo: pokemonImageView.leftAnchor, constant: 100),
-//            pokemonTypeLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20),
             
             starButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
             starButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -0),

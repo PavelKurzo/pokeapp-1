@@ -28,12 +28,12 @@ class RootViewController: UIViewController {
         super.viewDidLoad()
         setup()
     }
-    
+
     private func setup() {
         rootView.collectionView.delegate = self
         rootView.collectionView.dataSource = self
     }
-
+    
     private func apiCallPokemonData() {
         PokeAPI().getData { result in
             switch result {
@@ -65,12 +65,15 @@ class RootViewController: UIViewController {
             dump(self.pokemonSelected)
         }
     }
-    
+ 
     private func openDetailsVC(_ indexPath: IndexPath) {
         let detailsVC = DetailsViewController()
         detailsVC.modalPresentationStyle = .fullScreen
         detailsVC.pokemonNameString = "\(pokemon[indexPath.row].name)"
         detailsVC.pokemonUrlString = "\((pokemonSelected[indexPath.row].sprites.front_default) ?? "")"
+        detailsVC.pokemonDefenceStat = "\(pokemonSelected[indexPath.row].stats[2].baseStat)"
+        detailsVC.pokemonAttackStat = "\(pokemonSelected[indexPath.row].stats[1].baseStat)"
+        detailsVC.pokemonPVStat = "\(pokemonSelected[indexPath.row].stats[0].baseStat)"
         present(detailsVC, animated: true)
     }
 }
@@ -106,6 +109,10 @@ extension RootViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         openDetailsVC(indexPath)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+ 
     }
 }
 

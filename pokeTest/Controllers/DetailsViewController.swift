@@ -11,6 +11,9 @@ class DetailsViewController: UIViewController {
     
     var pokemonNameString: String = ""
     var pokemonUrlString: String = ""
+    var pokemonAttackStat: String = ""
+    var pokemonDefenceStat: String = ""
+    var pokemonPVStat: String = ""
             
     private var detailView: DetailsView {
         return self.view as! DetailsView
@@ -23,7 +26,6 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configure()
     }
     
@@ -32,7 +34,9 @@ class DetailsViewController: UIViewController {
         detailView.pokemonNameLabel.text = pokemonNameString
         detailView.backButton.addTarget(self, action: #selector(backButtonPressed), for: .primaryActionTriggered)
         detailView.pokemonImage.load(url: URL(string: "\(pokemonUrlString)")!)
-
+        detailView.pokemonAttackLabel.text = "Attack \(pokemonAttackStat)"
+        detailView.pokemonDefenceLabel.text = "Defence \(pokemonDefenceStat)"
+        detailView.pokemonPVLabel.text = "pv \(pokemonPVStat.capitalized)"
     }
 
     @objc func backButtonPressed() {

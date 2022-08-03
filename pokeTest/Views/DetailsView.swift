@@ -46,6 +46,47 @@ class DetailsView: UIView {
         return label
     }()
     
+    let pokemonDefenceLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.textColor = .systemBlue
+        label.layer.borderColor = UIColor.systemBlue.cgColor
+        label.layer.borderWidth = 1.0
+        label.layer.cornerRadius = 9
+        label.font = .boldSystemFont(ofSize: 20)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let pokemonAttackLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.textColor = .systemRed
+        label.layer.borderColor = UIColor.systemRed.cgColor
+        label.layer.borderWidth = 1.0
+        label.layer.cornerRadius = 9
+        label.font = .boldSystemFont(ofSize: 20)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let pokemonPVLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.textColor = .systemYellow
+        label.backgroundColor = .systemBlue
+        label.layer.masksToBounds = true
+        label.layer.borderColor = UIColor(red: 0.016, green: 0.023, blue: 0.5, alpha: 1).cgColor
+        label.layer.borderWidth = 4.0
+        label.layer.cornerRadius = 37
+        label.font = UIFont.systemFont(ofSize: 21, weight: .heavy)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     init() {
         super.init(frame: .zero)
         setup()
@@ -61,6 +102,9 @@ class DetailsView: UIView {
         addSubview(pokemonImageFrame)
         addSubview(pokemonImage)
         addSubview(pokemonNameLabel)
+        addSubview(pokemonDefenceLabel)
+        addSubview(pokemonAttackLabel)
+        addSubview(pokemonPVLabel)
         setConstraints()
         backgroundColor = .systemBackground
     }
@@ -82,7 +126,22 @@ class DetailsView: UIView {
             pokemonImage.bottomAnchor.constraint(equalTo: pokemonImageFrame.bottomAnchor, constant: -4),
 
             pokemonNameLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            pokemonNameLabel.topAnchor.constraint(equalTo: pokemonImageFrame.bottomAnchor, constant: 20)
+            pokemonNameLabel.topAnchor.constraint(equalTo: pokemonImageFrame.bottomAnchor, constant: 20),
+            
+            pokemonDefenceLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -90),
+            pokemonDefenceLabel.topAnchor.constraint(equalTo: pokemonNameLabel.bottomAnchor, constant: 20),
+            pokemonDefenceLabel.heightAnchor.constraint(equalToConstant: 40),
+            pokemonDefenceLabel.widthAnchor.constraint(equalToConstant: 160),
+            
+            pokemonAttackLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 90),
+            pokemonAttackLabel.topAnchor.constraint(equalTo: pokemonNameLabel.bottomAnchor, constant: 20),
+            pokemonAttackLabel.heightAnchor.constraint(equalToConstant: 40),
+            pokemonAttackLabel.widthAnchor.constraint(equalToConstant: 160),
+            
+            pokemonPVLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 110),
+            pokemonPVLabel.topAnchor.constraint(equalTo: backButton.topAnchor, constant: 90),
+            pokemonPVLabel.heightAnchor.constraint(equalToConstant: 74),
+            pokemonPVLabel.widthAnchor.constraint(equalToConstant: 74),
         ]
         NSLayoutConstraint.activate(constraints)
     }

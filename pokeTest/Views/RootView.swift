@@ -17,6 +17,20 @@ class RootView: UIView {
         return image
     }()
     
+//    let backgroundLoadingImage: UIImageView = {
+//        let image = UIImageView()
+//        image.image = UIImage(named: "backgroundLoadingImage")
+//        image.translatesAutoresizingMaskIntoConstraints = false
+//        return image
+//    }()
+    
+    let logoImage: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "pokemon-logo")
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
+    
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -61,10 +75,10 @@ class RootView: UIView {
             backgroundImage.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0),
             backgroundImage.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0),
             backgroundImage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
-            
+
             mainLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 70),
             mainLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
-            
+
             collectionView.topAnchor.constraint(equalTo: mainLabel.topAnchor, constant: 80),
             collectionView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16),
             collectionView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16),
